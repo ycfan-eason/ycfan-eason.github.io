@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yicheng (Eason) Fan — Bassist · Photographer · Game Designer</title>
+<meta name="description" content="Portfolio of Yicheng (Eason) Fan: bassist and singer in the band Luckspure, volunteer photographer, and two-time Bad Ideas Game Jam game designer.">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --bg:#F7F4ED;
+    --bg-soft:#F2EDE2;
+    --panel:#FFFFFF;
+    --line:rgba(43,38,29,0.12);
+    --text:#2B2519;
+    --muted:#6F6755;
+    --accent:#C96A1B;
+    --accent-ink:#FFFFFF;
+    --accent-dim:rgba(201,106,27,0.10);
+    --shadow:0 1px 2px rgba(43,38,29,0.05), 0 10px 26px rgba(43,38,29,0.07);
+    --radius:14px;
+    --font-display:'Oswald','Noto Sans SC','PingFang SC','Segoe UI',Arial,sans-serif;
+    --font-body:'Noto Sans SC','PingFang SC','Segoe UI',Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* ===== Nav ===== */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(247,244,237,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;}
+  .nav-brand{font-family:var(--font-display);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-size:17px;}
+  .nav-brand em{color:var(--accent);font-style:normal;}
+  .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap;}
+  .nav-links a{
+    display:inline-block;padding:9px 12px;font-size:13px;font-weight:500;
+    color:var(--muted);letter-spacing:0.04em;border-radius:8px;
+    transition:color .18s ease, background .18s ease;
+    min-height:44px;line-height:26px;
+  }
+  .nav-links a:hover{color:var(--text);background:rgba(43,38,29,0.06);}
+
+  /* ===== Hero ===== */
+  section.hero{
+    position:relative;min-height:92vh;display:flex;align-items:flex-end;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 80% 18%, rgba(201,106,27,0.12) 0%, rgba(201,106,27,0.03) 42%, transparent 70%),
+      linear-gradient(90deg, var(--bg) 0%, var(--bg) 55%, rgba(247,244,237,0.92) 70%, rgba(247,244,237,0.55) 84%, rgba(247,244,237,0.2) 100%);
+  }
+  .hero-bg img{display:none;}
+  .hero-content{position:relative;z-index:2;width:100%;padding:110px 0 84px;
+    display:flex;align-items:center;gap:clamp(28px,5vw,64px);}
+  .hero-copy{flex:1 1 520px;min-width:0;}
+  .hero-photo{flex:0 1 400px;min-width:0;}
+  .hero-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:52% 22%;
+    border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--panel);}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);
+    font-weight:500;
+  }
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--accent);}
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:600;text-transform:uppercase;
+    font-size:clamp(42px, 7.6vw, 88px);
+    line-height:1.04;letter-spacing:0.02em;
+    margin:8px 0 22px;max-width:900px;
+  }
+  .hero h1 .accent{color:var(--accent);}
+  .hero .cn-name{font-family:var(--font-display);font-weight:600;
+    font-size:clamp(42px, 7.6vw, 88px);
+    line-height:1.04;letter-spacing:0.16em;margin:0;color:var(--text);}
+  .hero p.sub{max-width:660px;color:var(--muted);font-size:clamp(15px, 1.6vw, 18px);margin-bottom:34px;}
+  .hero .roles{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 26px;}
+  .hero .roles span{font-size:13px;font-weight:500;letter-spacing:0.06em;color:var(--text);
+    border:1px solid rgba(43,38,29,0.18);border-radius:999px;padding:6px 14px;background:rgba(255,255,255,0.55);}
+  .hero .roles span em{font-style:normal;color:var(--accent);}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:46px;padding:0 22px;border-radius:10px;
+    font-size:14px;font-weight:700;letter-spacing:0.05em;
+    transition:transform .18s ease, background .18s ease, color .18s ease;
+    cursor:pointer;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:var(--accent-ink);}
+  .btn-primary:hover{background:#E07B26;transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,0.55);}
+  .btn-ghost:hover{border-color:rgba(43,38,29,0.3);background:#FFFFFF;}
+  .btn svg{width:16px;height:16px;}
+
+  /* ===== Sections ===== */
+  section.block{padding:96px 0 20px;position:relative;scroll-margin-top:60px;}
+  /* 区域间全宽分割线：横贯整个板块 + 居中菱形 */
+  section.block::before{
+    content:"";position:absolute;top:48px;left:0;right:0;height:1px;
+    background:linear-gradient(90deg, transparent 2%, rgba(26,27,28,.12) 10%, rgba(26,27,28,.2) 50%, rgba(26,27,28,.12) 90%, transparent 98%);
+  }
+  section.block::after{
+    content:"";position:absolute;top:42px;left:50%;width:11px;height:11px;
+    background:var(--accent);transform:translateX(-50%) rotate(45deg);
+    box-shadow:0 0 0 6px var(--bg);
+  }
+  .sec-head{position:relative;margin-bottom:40px;max-width:760px;}
+  /* 章节编号：悬在分割线上方居中 */
+  section.block .no{
+    position:absolute;top:8px;left:50%;transform:translateX(-50%);
+    display:flex;align-items:baseline;gap:12px;white-space:nowrap;
+    z-index:1;
+  }
+  section.block .no b{
+    font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1;font-weight:600;
+    color:rgba(224,129,60,.45);letter-spacing:0.02em;
+  }
+  section.block .no span{
+    font-family:var(--font-display);font-size:13px;letter-spacing:0.3em;
+    color:var(--accent);text-transform:uppercase;
+  }
+  .sec-head h2{
+    font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(30px, 4.4vw, 48px);letter-spacing:0.03em;margin:10px 0 14px;
+  }
+  .sec-head p{color:var(--muted);font-size:15.5px;}
+  .sec-head .rule{width:56px;height:3px;background:var(--accent);margin-top:18px;}
+
+  /* ===== Band / Video cards ===== */
+  .band-intro{
+    display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start;
+    border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--panel);padding:26px;margin-bottom:32px;box-shadow:var(--shadow);
+  }
+  .band-intro .bi-img{flex:0 1 300px;border-radius:10px;overflow:hidden;}
+  .band-intro .bi-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+  .band-intro .bi-text{flex:1 1 300px;min-width:0;}
+  .band-intro h3{font-family:var(--font-display);font-size:24px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;}
+  .band-intro .role{color:var(--accent);font-size:13.5px;letter-spacing:0.08em;text-transform:uppercase;margin:6px 0 12px;}
+  .band-intro p{color:var(--muted);font-size:15px;}
+  .band-intro .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+  .tag{font-size:12px;color:var(--text);background:var(--accent-dim);border:1px solid rgba(201,106,27,0.28);padding:4px 10px;border-radius:999px;}
+
+  .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+  .vcard{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;background:var(--panel);cursor:pointer;box-shadow:var(--shadow);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .vcard:hover{border-color:rgba(201,106,27,0.5);transform:translateY(-3px);}
+  .vcard .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;}
+  .vcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .vcard:hover .thumb img{transform:scale(1.04);}
+  .vcard .live{
+    position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:6px;
+    background:var(--accent);color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:0.18em;
+    padding:5px 10px;border-radius:6px;box-shadow:0 1px 4px rgba(43,38,29,0.2);
+  }
+  .vcard .live::before{content:"";width:7px;height:7px;border-radius:50%;background:#FFFFFF;}
+  .vcard .dur{
+    position:absolute;right:14px;bottom:14px;background:rgba(255,255,255,0.92);
+    border:1px solid rgba(43,38,29,0.1);color:var(--text);font-size:12px;font-weight:500;padding:3px 8px;border-radius:6px;
+  }
+  .vcard .play-ico{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:58px;height:58px;border-radius:50%;
+    background:rgba(201,106,27,0.92);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .2s ease;
+  }
+  .vcard:hover .play-ico{transform:translate(-50%,-50%) scale(1.08);}
+  .vcard .meta{padding:16px 18px 18px;}
+  .vcard .meta h4{font-family:var(--font-display);font-size:19px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;}
+  .vcard .meta p{color:var(--muted);font-size:13.5px;margin-top:5px;}
+  .vcard .song{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--accent);
+    border:1px solid rgba(201,106,27,0.32);background:var(--accent-dim);border-radius:999px;padding:4px 11px;}
+  .vcard .song svg{width:12px;height:12px;flex:none;}
+  .vcard .links{display:flex;gap:14px;margin-top:12px;font-size:13px;font-weight:500;}
+  .vcard .links a{color:var(--accent);}
+  .vcard .links a:hover{text-decoration:underline;}
+  .vcard .zoom{
+    position:absolute;top:14px;right:14px;z-index:3;width:34px;height:34px;border-radius:8px;
+    background:rgba(255,255,255,0.9);border:1px solid rgba(43,38,29,0.14);color:var(--text);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+    transition:background .18s ease, border-color .18s ease;
+  }
+  .vcard .zoom:hover{background:#FFFFFF;border-color:var(--accent);color:var(--accent);}
+  .vcard .zoom svg{width:15px;height:15px;}
+
+  /* ===== Lens ===== */
+  .lens-tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;}
+  .track{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:24px;box-shadow:var(--shadow);}
+  .track h3{font-family:var(--font-display);font-size:20px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;}
+  .track .sub{color:var(--accent);font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;margin:5px 0 14px;}
+  .track p{color:var(--muted);font-size:14.5px;margin-bottom:16px;}
+  .photo-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
+  .photo-row figure{position:relative;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid var(--line);}
+  .photo-row img{width:100%;height:220px;object-fit:cover;transition:transform .4s ease;}
+  .photo-row figure:hover img{transform:scale(1.05);}
+  .photo-row figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;font-size:11.5px;color:var(--text);
+    background:linear-gradient(180deg,transparent,rgba(255,255,255,0.92));}
+  .pub-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .pub-list[hidden]{display:none;}
+  .pub-list a{
+    display:flex;align-items:center;gap:12px;padding:12px 14px;
+    border:1px solid var(--line);border-radius:10px;background:rgba(43,38,29,0.025);
+    transition:border-color .18s ease, background .18s ease;min-height:48px;
+  }
+  .pub-list a:hover{border-color:rgba(201,106,27,0.45);background:rgba(201,106,27,0.06);}
+  .pub-list .idx{font-family:var(--font-display);color:var(--accent);font-size:14px;}
+  .pub-list .txt{flex:1;min-width:0;}
+  .pub-list .txt b{display:block;font-size:14px;font-weight:500;}
+  .pub-list .txt span{font-size:12px;color:var(--muted);}
+  .pub-list svg{width:15px;height:15px;color:var(--muted);flex:none;}
+  .pub-card{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,0.6);overflow:hidden;box-shadow:var(--shadow);}
+  .pub-head{display:flex;gap:14px;align-items:flex-start;padding:18px 18px 12px;}
+  .pub-head .pub-ico{flex:none;width:40px;height:40px;border-radius:10px;background:var(--accent-dim);
+    border:1px solid rgba(201,106,27,0.3);display:flex;align-items:center;justify-content:center;color:var(--accent);}
+  .pub-head .pub-ico svg{width:19px;height:19px;}
+  .pub-head b{display:block;font-size:14.5px;font-weight:600;letter-spacing:0.02em;}
+  .pub-head p{color:var(--muted);font-size:12.5px;margin-top:4px;line-height:1.55;}
+  .pub-card .pub-actions{padding:4px 18px 18px;}
+  .pub-card .pub-toggle{width:100%;justify-content:center;}
+  .pub-card .pub-toggle[aria-expanded="true"] .pub-chev{transform:rotate(180deg);}
+  .pub-chev{transition:transform .2s ease;}
+  .pub-card .pub-list{padding:4px 18px 18px;}
+  .pub-card .pub-list a{min-height:44px;}
+  .pub-card .pub-list .txt span{display:block;margin-top:1px;}
+
+  /* ===== Games ===== */
+  .game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+  .gcard{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden;
+    display:flex;flex-direction:column;box-shadow:var(--shadow);transition:border-color .2s ease, transform .2s ease;}
+  .gcard:hover{border-color:rgba(201,106,27,0.5);transform:translateY(-3px);}
+  .gcard .shot{aspect-ratio:16/10;overflow:hidden;background:#EAE5DA;}
+  .gcard .shot img{width:100%;height:100%;object-fit:cover;}
+  .gcard .body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;}
+  .gcard .chip{font-size:11.5px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;}
+  .gcard h3{font-family:var(--font-display);font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin:6px 0 8px;}
+  .gcard p{color:var(--muted);font-size:14px;flex:1;}
+  .gcard .tags{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 16px;}
+  .gcard .tags span{font-size:12px;color:var(--text);background:var(--accent-dim);border:1px solid rgba(201,106,27,0.25);padding:3px 9px;border-radius:999px;}
+  .gcard .play{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px;padding:0 18px;
+    border-radius:9px;background:var(--accent);color:var(--accent-ink);font-size:13.5px;font-weight:700;letter-spacing:0.04em;
+    transition:background .18s ease;}
+  .gcard .play:hover{background:#E07B26;}
+
+  /* ===== Impact & Build ===== */
+  .photo-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .photo-strip figure{border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative;}
+  .photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+  .photo-strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 12px 8px;font-size:12px;color:var(--text);
+    background:linear-gradient(180deg,transparent,rgba(255,255,255,0.92));}
+  .photo-scroll{display:flex;gap:16px;overflow-x:auto;padding:2px 2px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+  .photo-scroll figure{flex:0 0 320px;scroll-snap-align:start;border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative;cursor:pointer;}
+  .photo-scroll img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .4s ease;}
+  .photo-scroll figure:hover img{transform:scale(1.04);}
+  .photo-scroll figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 12px 8px;font-size:12px;color:var(--text);
+    background:linear-gradient(180deg,transparent,rgba(255,255,255,0.92));}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;align-items:start;}
+
+  /* ===== Experience (EnerGo) ===== */
+  .exp-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);box-shadow:var(--shadow);
+    display:flex;flex-wrap:wrap;gap:26px;align-items:center;padding:30px;}
+  .exp-card .exp-main{flex:1 1 320px;min-width:0;}
+  .exp-card .chip{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--accent);
+    letter-spacing:0.12em;text-transform:uppercase;border:1px solid rgba(201,106,27,0.32);
+    background:var(--accent-dim);border-radius:999px;padding:5px 12px;}
+  .exp-card h3{font-family:var(--font-display);font-size:clamp(22px,3vw,28px);font-weight:600;
+    text-transform:uppercase;letter-spacing:0.04em;margin:14px 0 6px;}
+  .exp-card .role-line{color:var(--accent);font-size:14px;font-weight:500;margin-bottom:12px;}
+  .exp-card p{color:var(--muted);font-size:14.5px;max-width:680px;}
+  .exp-card .exp-side{flex:0 1 250px;display:flex;flex-direction:column;gap:12px;}
+  .exp-side .stat{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:rgba(43,38,29,0.025);}
+  .exp-side .stat b{display:block;font-family:var(--font-display);font-size:15px;letter-spacing:0.05em;}
+  .exp-side .stat span{font-size:12px;color:var(--muted);}
+  .exp-side .stat a.paper-link{color:var(--accent);text-decoration:none;font-family:var(--font-display);}
+  .exp-side .stat a.paper-link:hover{text-decoration:underline;}
+  .exp-side .btn{width:100%;}
+  .exp-card .tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0;}
+  .exp-card .tags span{font-size:12px;color:var(--text);background:var(--accent-dim);border:1px solid rgba(201,106,27,0.25);padding:3px 9px;border-radius:999px;}
+
+  /* ===== Footer ===== */
+
+  footer{border-top:1px solid var(--line);margin-top:96px;padding:30px 0 44px;color:var(--muted);font-size:13.5px;}
+  .foot-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+  /* ===== Splash entry ===== */
+  .splash{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+    background:#F7F4ED;opacity:0;transition:opacity .55s ease;}
+  .splash.show{display:flex;opacity:1;}
+  .splash.hide{opacity:0;pointer-events:none;}
+  /* 阶段一：完整照片（移动端最终形态） */
+  .splash-full{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;}
+  .splash-full.on{opacity:1;}
+  .splash-full img{width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:1;}
+  .splash-full-shade{position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(247,244,237,0.97) 0%, rgba(247,244,237,0.78) 10%, rgba(247,244,237,0.3) 22%, transparent 38%);}
+  .splash-top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:4.5vh 20px 0;}
+  .splash-top .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--accent);font-weight:500;}
+  .splash-top h1{font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(26px,4vw,40px);letter-spacing:0.03em;color:var(--text);margin:10px 0 5px;line-height:1.05;}
+  .splash-top .tagline{font-family:var(--font-display);letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-size:12.5px;}
+  .splash-top .splash-cta{margin-top:16px;}
+  /* 阶段二：分裂布局（桌面） */
+  .splash-split{position:absolute;inset:0;display:none;}
+  .splash-split.on{display:flex;}
+  .split-left{flex:0 0 61%;overflow:hidden;position:relative;transform:translateX(-5%);opacity:0;
+    transition:transform .75s cubic-bezier(.2,.75,.25,1),opacity .55s ease;}
+  .split-left img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;}
+  .split-right{flex:0 0 23.4%;overflow:hidden;position:relative;transform:translateX(6%);opacity:0;
+    transition:transform .75s cubic-bezier(.2,.75,.25,1),opacity .55s ease;}
+  .split-right img{position:absolute;top:0;right:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;}
+  .split-mid{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    padding:0 16px;opacity:0;transform:translateY(16px);
+    transition:opacity .55s ease .18s,transform .65s ease .18s;}
+  .split-mid .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);font-weight:500;white-space:nowrap;}
+  .split-mid h1{font-family:var(--font-display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(24px,2.6vw,34px);letter-spacing:0.03em;color:var(--text);margin:12px 0 6px;line-height:1.08;}
+  .split-mid .tagline{font-family:var(--font-display);letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-size:12px;}
+  .split-mid .splash-cta{margin-top:22px;}
+  .splash-split.on .split-left,.splash-split.on .split-right{transform:translateX(0);opacity:1;}
+  .splash-split.on .split-mid{opacity:1;transform:translateY(0);}
+
+  /* ===== Modal ===== */
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+    background:rgba(20,16,11,0.9);padding:5vw;}
+  .modal.open{display:flex;}
+  .modal .box{width:min(1080px,100%);position:relative;}
+  .modal video{width:100%;border-radius:12px;background:#000;outline:none;}
+  .modal .m-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-right:52px;}
+  .modal .m-head b{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.06em;font-size:18px;color:#fff;}
+  .modal .close{position:absolute;top:-52px;right:0;width:44px;height:44px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);background:rgba(20,16,11,0.45);color:#fff;
+    font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .18s ease,transform .18s ease;}
+  .modal .close:hover{background:rgba(201,106,27,0.9);transform:rotate(90deg);}
+  .modal .alt-link{margin-top:12px;font-size:13.5px;color:rgba(255,255,255,0.85);}
+  .modal .alt-link a{color:#E8A15F;text-decoration:underline;}
+  .mnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);background:rgba(20,16,11,0.45);color:#fff;
+    font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .18s ease;z-index:3;}
+  .mnav:hover{background:rgba(201,106,27,0.9);}
+  .mnav#videoPrev{left:-64px;}
+  .mnav#videoNext{right:-64px;}
+
+  /* ===== Lightbox ===== */
+  .lightbox{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;
+    background:rgba(20,16,11,0.9);padding:5vw;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:0 18px 60px rgba(0,0,0,0.5);}
+  .lightbox-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);background:rgba(20,16,11,0.45);color:#fff;
+    font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .18s ease,transform .18s ease;z-index:2;}
+  .lightbox-close:hover{background:rgba(201,106,27,0.9);transform:rotate(90deg);}
+  .lbnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,0.35);background:rgba(20,16,11,0.45);color:#fff;
+    font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:background .18s ease;z-index:2;}
+  .lbnav:hover{background:rgba(201,106,27,0.9);}
+  .lbnav#lbPrev{left:18px;}
+  .lbnav#lbNext{right:18px;}
+
+  /* ===== Splash CTA 提示文字 ===== */
+  .splash .splash-cta{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .splash .cta-hint{font-size:12.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);}
+  .splash .splash-cta .btn-primary{position:relative;}
+  .splash-bass{width:96px;height:96px;border-radius:50%;padding:0;flex:none;
+    box-shadow:0 6px 22px rgba(201,106,27,0.35);}
+  .splash-bass svg{width:52px;height:52px;}
+  .splash-bass:hover{transform:scale(1.07);background:#E07B26;box-shadow:0 10px 30px rgba(201,106,27,0.45);}
+
+  @media (max-width:1024px){
+    .splash-split{display:none !important;}
+    .splash-full img{object-fit:contain !important;object-position:center 30%;}
+    .splash-full-shade{background:linear-gradient(180deg, rgba(247,244,237,0.97) 0%, rgba(247,244,237,0.78) 10%, rgba(247,244,237,0.35) 24%, transparent 40%);}
+    .hero-content{flex-direction:column;text-align:center;gap:32px;}
+    .hero-copy{display:flex;flex-direction:column;align-items:center;}
+    .hero-photo{max-width:340px;width:100%;}
+    .hero-cta{justify-content:center;}
+  }
+  @media (min-width:1025px){
+    .splash-top{display:none;}
+  }
+  @media (max-width:640px){
+    section.block{padding:72px 0 8px;scroll-margin-top:115px;}
+    .nav-inner{flex-direction:column;align-items:flex-start;gap:10px;}
+    .nav-links{width:100%;display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;}
+    .nav-links a{min-height:40px;line-height:22px;padding:8px 11px;white-space:nowrap;}
+    .hero h1{font-size:40px;}
+    .hero .cn-name{font-size:40px;}
+    .hero-photo{max-width:300px;}
+    .splash-top h1{font-size:26px;margin:8px 0 4px;}
+    .splash-top .splash-cta{margin-top:14px;}
+  }
+
+  /* ===== Scroll reveal: fade up + stagger ===== */
+  .reveal{opacity:0;transform:translateY(44px);transition:opacity .75s ease-out,transform .75s ease-out;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transform:none;} /* 系统要求减弱时仍保留淡入，只是去掉位移 */
+  }
+  .build-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+</style>
+</head>
+<body>
+
+<!-- ===== Splash entry ===== -->
+<div class="splash" id="splash" role="dialog" aria-modal="true" aria-label="Enter portfolio">
+  <div class="splash-full" id="splashFull">
+    <img src="assets/aJRpNAGjli.jpg" alt="Yicheng Fan with the band">
+    <div class="splash-full-shade"></div>
+    <div class="splash-top">
+      <h1>Yicheng <em style="font-style:normal;color:var(--accent);">(Eason)</em> Fan</h1>
+      <div class="tagline">Bass · Photos · Games</div>
+      <div class="splash-cta">
+        <span class="cta-hint">Click to enter my portfolio</span>
+        <button class="btn btn-primary splash-bass" id="enterSiteM" type="button" aria-label="Enter portfolio">
+          <svg viewBox="0 0 24 24" width="52" height="52" fill="currentColor" aria-hidden="true">
+            <path d="M18.5 5A1.5 1.5 0 1 1 17 6.5A1.5 1.5 0 0 1 18.5 5M18.5 11A1.5 1.5 0 1 1 17 12.5A1.5 1.5 0 0 1 18.5 11M10 4A5 5 0 0 0 5 9V10A2 2 0 1 0 7.18 8A3 3 0 0 1 10 6A4 4 0 0 1 14 10C14 13.59 11.77 16.19 7 18.2L7.76 20.04C13.31 17.72 16 14.43 16 10A6 6 0 0 0 10 4Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="splash-split" id="splashSplit" aria-hidden="true">
+    <div class="split-left">
+      <img src="assets/JWkVoRmF8F.jpg" alt="Yicheng Fan with two bandmates">
+    </div>
+    <div class="split-mid">
+      <span class="eyebrow">Personal Portfolio</span>
+      <h1>Yicheng <em style="font-style:normal;color:var(--accent);">(Eason)</em> Fan</h1>
+      <div class="tagline">Bass · Photos · Games</div>
+      <div class="splash-cta">
+        <span class="cta-hint">Click to enter my portfolio</span>
+        <button class="btn btn-primary splash-bass" id="enterSite" type="button" aria-label="Enter portfolio">
+          <svg viewBox="0 0 24 24" width="52" height="52" fill="currentColor" aria-hidden="true">
+            <path d="M18.5 5A1.5 1.5 0 1 1 17 6.5A1.5 1.5 0 0 1 18.5 5M18.5 11A1.5 1.5 0 1 1 17 12.5A1.5 1.5 0 0 1 18.5 11M10 4A5 5 0 0 0 5 9V10A2 2 0 1 0 7.18 8A3 3 0 0 1 10 6A4 4 0 0 1 14 10C14 13.59 11.77 16.19 7 18.2L7.76 20.04C13.31 17.72 16 14.43 16 10A6 6 0 0 0 10 4Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="split-right">
+      <img src="assets/JJcUme2avk.jpg" alt="Bandmate with bass">
+    </div>
+  </div>
+</div>
+
+<!-- ===== Nav ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="nav-brand">Yicheng<em>.</em>Fan</div>
+    <ul class="nav-links">
+      <li><a href="#stage">On Stage</a></li>
+      <li><a href="#lens">Lens</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#energo">EnerGo</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#build">Beyond</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg">
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-copy">
+      <div class="cn-name">范逸成</div>
+      <h1>Yicheng Fan<br><span class="accent" style="text-transform:none;letter-spacing:0.02em;">EASON</span></h1>
+      <div class="roles">
+        <span><em>Bassist</em> &amp; Singer</span>
+        <span>Photographer</span>
+        <span>Game Designer</span>
+      </div>
+      <p class="sub">I'm an IB student at Qibao Dwight High School in Shanghai. Outside class I play bass and sing in a band, cover campus events with a camera, and design small games under big deadlines. This page is a look at the work I do beyond the classroom.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#stage">Explore my work</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="assets/hero_portrait.jpg" alt="Yicheng Fan speaking at the school photography exhibition">
+    </figure>
+  </div>
+</section>
+
+<!-- ===== On Stage ===== -->
+<section class="block" id="stage">
+  <div class="no"><b>01</b><span>On Stage</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Luckspure, live</h2>
+      <p>Three recordings, three moods: a street set in the neighbourhood, a school festival show, and the rehearsal room where it all comes together.</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="band-intro">
+      <div class="bi-img">
+        <img src="assets/nvXNi2kthi.jpg" alt="Luckspure band group photo" data-full="assets/nvXNi2kthi.jpg">
+      </div>
+      <div class="bi-text">
+        <h3>The Band — Luckspure</h3>
+        <div class="role">Bassist · Singer · Equipment Supervisor</div>
+        <p>Since Grade 9 I've been the bass player — and often the voice — of Luckspure. I adapt and simplify bass lines while keeping the groove, record vocals for our IB Music arrangements, and keep the cables, amps and setlists in order before every show. Next stop: the 2027 New York Dwight Music Festival.</p>
+        <div class="tag-row">
+          <span class="tag">Weekly rehearsals</span>
+          <span class="tag">Bass · Vocals</span>
+          <span class="tag">NYC 2027</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-grid">
+      <!-- Street performance -->
+      <div class="vcard" data-video="assets/o66lrPVUWW.mp4" data-title="Street Performance — Live at the Park" data-poster="assets/kVRwDrTJVc.jpg">
+        <div class="thumb">
+          <img src="assets/kVRwDrTJVc.jpg" alt="Street performance thumbnail">
+          <button class="zoom" data-full="assets/kVRwDrTJVc.jpg" aria-label="View full-size cover image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg>
+          </button>
+          <span class="live">Live</span>
+          <span class="dur">2:07</span>
+          <span class="play-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg></span>
+        </div>
+        <div class="meta">
+          <h4>Street Performance</h4>
+          <p>Full band on a neighbourhood square — guitars, keys, drums and vocals, no stage but the pavement.</p>
+          <span class="song">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+            Covering 声なき魚 — TOGENASHI TOGEARI
+          </span>
+        </div>
+      </div>
+
+      <!-- School event -->
+      <div class="vcard" data-video="assets/N49k91YVfV.mp4" data-title="School Event — Qibao Dwight Festival" data-poster="assets/QGcaefGSsf.jpg" data-alt-video="assets/DYVrSHiE0i.mp4" data-alt-label="Full set (4:24)">
+        <div class="thumb">
+          <img src="assets/QGcaefGSsf.jpg" alt="School festival performance thumbnail">
+          <button class="zoom" data-full="assets/QGcaefGSsf.jpg" aria-label="View full-size cover image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg>
+          </button>
+          <span class="live">Live</span>
+          <span class="dur">1:30</span>
+          <span class="play-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg></span>
+        </div>
+        <div class="meta">
+          <h4>School Festival Set</h4>
+          <p>Luckspure at the Qibao Dwight campus event. A 90-second highlight — the full 4:24 set is also available.</p>
+          <span class="song">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+            Live set — Japanese rock cover
+          </span>
+          <div class="links"><a href="#" data-alt-link>Watch the full set</a></div>
+        </div>
+      </div>
+
+      <!-- Rehearsal -->
+      <div class="vcard" data-video="assets/ThWhmGnHOo.mp4" data-title="Rehearsal — Behind the Scenes" data-poster="assets/pRQzC49V8z.jpg">
+        <div class="thumb">
+          <img src="assets/pRQzC49V8z.jpg" alt="Rehearsal room thumbnail">
+          <button class="zoom" data-full="assets/pRQzC49V8z.jpg" aria-label="View full-size cover image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg>
+          </button>
+          <span class="live">Backstage</span>
+          <span class="dur">0:45</span>
+          <span class="play-ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg></span>
+        </div>
+        <div class="meta">
+          <h4>Rehearsal Room</h4>
+          <p>A short slice of the weekly grind — working out parts and vocals before it becomes a show.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Lens ===== -->
+<section class="block" id="lens">
+  <div class="no"><b>02</b><span>Lens</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Photography</h2>
+      <p>Two tracks, one habit of looking carefully: my own quiet frames, and the event coverage I shoot for the school's official WeChat account — all of it shot on a <strong>Nikon D5</strong> or the <strong>Nikon Z50ii</strong>.</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="lens-tracks">
+      <div class="track">
+        <h3>Personal Work</h3>
+        <div class="sub">What I frame when I choose the subject</div>
+        <p>Night gardens, stone arches and city lights — the frames I take for myself when I'm out walking with a camera, from the Twenty-Four Bridges in Yangzhou's Slender West Lake to the streets and stations of Shanghai.</p>
+        <div class="photo-row">
+          <figure class="lightbox-img" data-src="assets/LPHg2h0kPp.jpg">
+            <img src="assets/LPHg2h0kPp.jpg" alt="Night garden lantern scene" data-full="assets/LPHg2h0kPp.jpg">
+            <figcaption>Night Garden — Twenty-Four Bridges, Yangzhou</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/meUl4eRLpK.jpg">
+            <img src="assets/meUl4eRLpK.jpg" alt="Classical stone arch bridge" data-full="assets/meUl4eRLpK.jpg">
+            <figcaption>Stone Arch Bridge — Twenty-Four Bridges, Yangzhou</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/arch_bridge_night.jpg">
+            <img src="assets/arch_bridge_night.jpg" alt="Stone arch bridge outlined in light at night" data-full="assets/arch_bridge_night.jpg">
+            <figcaption>Arched Bridge at Night</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/clock_tower.jpg">
+            <img src="assets/clock_tower.jpg" alt="Customs House clock tower at night in Shanghai" data-full="assets/clock_tower.jpg">
+            <figcaption>Customs House Clock Tower, Shanghai</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/metro_station.jpg">
+            <img src="assets/metro_station.jpg" alt="Zhongshan Park metro station at night" data-full="assets/metro_station.jpg">
+            <figcaption>Zhongshan Park Station, Shanghai</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/bus_911.jpg">
+            <img src="assets/bus_911.jpg" alt="Route 911 double-decker bus in the afternoon" data-full="assets/bus_911.jpg">
+            <figcaption>Route 911, Shanghai</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/dusk_skyline.jpg">
+            <img src="assets/dusk_skyline.jpg" alt="City skyline at dusk" data-full="assets/dusk_skyline.jpg">
+            <figcaption>Dusk Skyline</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="track">
+        <h3>School Coverage</h3>
+        <div class="sub">Volunteer photographer · credited in print</div>
+        <p>Graduation ceremonies, orientation days, campus events — I check the gear, position myself early, and make sure every stage of the day is covered. From the East-meets-West exchange concert with Dwight Hanoi to the morning assemblies.</p>
+        <div class="pub-card">
+          <div class="pub-head">
+            <span class="pub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+            </span>
+            <div>
+              <b>Published Coverage</b>
+              <p>Three feature stories on the school's official WeChat account. Articles are in Chinese; I'm credited as photographer in each one.</p>
+            </div>
+          </div>
+          <div class="pub-actions">
+            <button class="btn btn-primary pub-toggle" id="pubToggle" aria-expanded="false">
+              <span class="pub-toggle-label">View the 3 stories</span>
+              <svg class="pub-chev" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </div>
+          <ul class="pub-list" id="pubList" hidden>
+            <li>
+              <a href="https://mp.weixin.qq.com/s/YtjYZF2m_SkTyDQ66y-xTg" target="_blank" rel="noopener">
+                <span class="idx">01</span>
+                <span class="txt"><b>2026 Graduation Ceremony</b><span>WeChat · Chinese · Photography credit</span></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://mp.weixin.qq.com/s/fbb4ccmNjzUgbYelgVGijw" target="_blank" rel="noopener">
+                <span class="idx">02</span>
+                <span class="txt"><b>O'Days — Opening Day</b><span>WeChat · Chinese · Photography credit</span></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://mp.weixin.qq.com/s/oByyY9FAMH0iTupu63MfSw" target="_blank" rel="noopener">
+                <span class="idx">03</span>
+                <span class="txt"><b>O'Days — Grand Finale</b><span>WeChat · Chinese · Photography credit</span></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="photo-row" style="margin-top:20px;">
+          <figure>
+            <img src="assets/event_01.jpg" alt="Midushange full stage" data-full="assets/event_01.jpg">
+            <figcaption>Midushange — full stage</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/event_02.jpg" alt="Midushange side view" data-full="assets/event_02.jpg">
+            <figcaption>Midushange — side view</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/event_03.jpg" alt="Flute and percussion duet" data-full="assets/event_03.jpg">
+            <figcaption>Flute &amp; percussion duet</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/event_04.jpg" alt="Vocal spotlight on stage" data-full="assets/event_04.jpg">
+            <figcaption>Vocal spotlight</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/event_05.jpg" alt="Morning assembly at Qibao Dwight" data-full="assets/event_05.jpg">
+            <figcaption>Morning assembly</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/event_06.jpg" alt="Campus showcase finale" data-full="assets/event_06.jpg">
+            <figcaption>Showcase finale</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Games ===== -->
+<section class="block" id="games">
+  <div class="no"><b>03</b><span>Games</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Game Design</h2>
+      <p>Two Bad Ideas Game Jam runs, two shipped games — as the designer who owns the gameplay, the levels and the story, and keeps the team moving to the deadline.</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="game-grid">
+      <div class="gcard">
+        <div class="shot">
+          <img src="assets/RkRHQH3sXG.png" alt="Outside the Box game screenshot" data-full="assets/RkRHQH3sXG.png">
+        </div>
+        <div class="body">
+          <div class="chip">Bad Ideas Game Jam · Run 1</div>
+          <h3>Outside the Box</h3>
+          <p>A physics-based puzzle game where you control the box instead of the character — tilt, flip, and think outside the box to guide the ball inside.</p>
+          <div class="tags">
+            <span>Game Designer</span>
+            <span>Team of 4</span>
+            <span>Led the build</span>
+          </div>
+          <a class="play" href="https://eason-fan.itch.io/outside-the-box" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+            Play on itch.io
+          </a>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <div class="shot">
+          <img src="assets/WVxyujaFBE.png" alt="Heatwave Hustle game screenshot" data-full="assets/WVxyujaFBE.png">
+        </div>
+        <div class="body">
+          <div class="chip">Bad Ideas Game Jam · Run 2</div>
+          <h3>Heatwave Hustle</h3>
+          <p>A 15-day sim where you run your own beach business — build stalls, serve customers, and grow it day by day.</p>
+          <div class="tags">
+            <span>Game Designer</span>
+            <span>Team of 3</span>
+            <span>Shipped on time</span>
+          </div>
+          <a class="play" href="https://eason-fan.itch.io/heatwave-hustle" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72L19 12 8 5.14z"/></svg>
+            Play on itch.io
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EnerGo ===== -->
+<section class="block" id="energo">
+  <div class="no"><b>04</b><span>Experience</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>EnerGo Internship</h2>
+      <p>Summer 2026 — a first look inside the new energy vehicle industry, from battery-swap operations to the full value chain.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-main">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5L13 2z"/></svg>
+          NIO-affiliated · New Energy
+        </span>
+        <h3>EnerGo — Battery Swapping</h3>
+        <div class="role-line">New Energy Vehicle Battery Swapping Station Intern · Jul–Aug 2026</div>
+        <p>During the internship I studied the EV battery-swapping value chain and how a swapping-station business operates end to end, then organised the findings into a structured research report for the team. It was a close look at how a real mobility business runs — and where design thinking meets hardware and logistics.</p>
+      </div>
+      <div class="exp-side">
+        <div class="stat">
+          <b>Jul – Aug 2026</b>
+          <span>Summer internship · 6 weeks</span>
+        </div>
+        <a class="btn btn-primary" href="https://www.energoev.com/about.html" target="_blank" rel="noopener">
+          Visit EnerGo website
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Research ===== -->
+<section class="block" id="research">
+  <div class="no"><b>05</b><span>Research</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Academic Paper</h2>
+      <p>Beyond the stage and the camera — a full research paper on how an animation studio builds lasting advantage through digital transformation.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-main">
+        <span class="chip">IB Research · Business &amp; Technology</span>
+        <h3 style="text-transform:none;letter-spacing:0.01em;">The Innovation Strategy and Sustainable Competitive Advantage in Toei Animation's 3DCG Transformation</h3>
+        <div class="role-line">A case study of Toei Animation's hybrid 2D/3D production pipeline</div>
+        <p><b>Guiding question:</b> how does Toei Animation's 3DCG transformation strategy facilitate building sustainable competitive advantage — and what most inhibits that facilitation?</p>
+        <p>Using a dynamic-capabilities lens, the paper traces Toei's move from hand-drawn 2D toward a 3D-assisted pipeline — 3DLO background tools, in-house Unreal Engine layout instruments, reusable style assets — and evaluates the strategy through SWOT, STEEPLE and Ansoff Matrix analysis. It argues that sustainable advantage depends not on the technology itself, but on dual artistic–technical leadership, reusable asset libraries, and capability-linked governance across a global production network.</p>
+        <div class="tags">
+          <span>Toei Animation</span>
+          <span>3DCG Transformation</span>
+          <span>Innovation Strategy</span>
+          <span>Dynamic Capabilities</span>
+          <span>Sustainable Competitive Advantage</span>
+        </div>
+      </div>
+      <div class="exp-side">
+        <div class="stat">
+          <b>Toei Animation</b>
+          <span>3DCG transformation · hybrid production</span>
+        </div>
+        <a class="btn btn-primary" href="assets/toei-animation-3dcg-paper.pdf" target="_blank" rel="noopener">Full paper ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Impact ===== -->
+<section class="block" id="impact">
+  <div class="no"><b>06</b><span>Impact</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Community Work</h2>
+      <p>Using the same camera skills for someone else's story — supporting apple farmers in rural Henan with photography and marketing.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="photo-strip">
+          <figure>
+            <img src="assets/R06jGQEvvD.jpg" alt="Paper cutting culture experience" data-full="assets/R06jGQEvvD.jpg">
+            <figcaption>Paper-cutting culture workshop</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/da6AaVLKTZ.jpg" alt="Volunteer team in the village" data-full="assets/da6AaVLKTZ.jpg">
+            <figcaption>On the ground in the village</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/ERpVBdMsdA.jpg" alt="Book corner donation" data-full="assets/ERpVBdMsdA.jpg">
+            <figcaption>Book corner we helped set up</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="track">
+        <h3>Lingbao Apple Support</h3>
+        <div class="sub">Volunteer · Henan</div>
+        <p>For the "Lingbao Apple Support for Farmers" project I shot promotional and display images for a local apple company to use in online marketing, and joined the discussions on copy and marketing strategy — using photography as a way to help teachers, students and low-income farmers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Build ===== -->
+<section class="block" id="build">
+  <div class="no"><b>07</b><span>Beyond the Stage</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Other Passions</h2>
+      <p>A quieter side of my week: Gunpla kits built one runner at a time, and the Go club I lead as president — coordinating recruitment and a friendly match against a UTokyo team.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="photo-strip build-grid">
+      <figure>
+        <img src="assets/T0siK0zVTc.jpg" alt="Gundam model on the workbench" data-full="assets/T0siK0zVTc.jpg">
+        <figcaption>The workbench</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/oCwJ4xpasS.jpg" alt="Gundam model close-up" data-full="assets/oCwJ4xpasS.jpg">
+        <figcaption>Runner by runner</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/15Ix2Tk8Ur.jpg" alt="Finished Gundam kit" data-full="assets/15Ix2Tk8Ur.jpg">
+        <figcaption>Finished kit</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_01.jpg" alt="HG GQuuuuuuX finished build" data-full="assets/gunpla_01.jpg">
+        <figcaption>HG GQuuuuuuX — done</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_02.jpg" alt="Finished kit on the desk" data-full="assets/gunpla_02.jpg">
+        <figcaption>Finished on the desk</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_03.jpg" alt="Gundam leg parts on the table" data-full="assets/gunpla_03.jpg">
+        <figcaption>Legs, runner by runner</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_04.jpg" alt="Barbatos clear colour MG 1/100" data-full="assets/gunpla_04.jpg">
+        <figcaption>Barbatos — clear colour</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_05.jpg" alt="Model shelf collection" data-full="assets/gunpla_05.jpg">
+        <figcaption>The shelf so far</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_06.jpg" alt="Head unit in progress" data-full="assets/gunpla_06.jpg">
+        <figcaption>Head unit in progress</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_07.jpg" alt="Workbench with parts and manual" data-full="assets/gunpla_07.jpg">
+        <figcaption>Workbench, parts &amp; manual</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/gunpla_08.jpg" alt="HG Guel's Dilanza finished" data-full="assets/gunpla_08.jpg">
+        <figcaption>HG Guel's Dilanza</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/go_club.jpg" alt="Jiezhidao Go Club team at the league event" data-full="assets/go_club.jpg">
+        <figcaption>Jiezhidao Go Club — SAGES league</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>Yicheng (Eason) Fan · Bassist · Photographer · Game Designer</div>
+    <div>Built for the things I make outside class.</div>
+  </div>
+</footer>
+
+<!-- ===== Video modal ===== -->
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="box">
+    <button class="mnav" id="videoPrev" type="button" aria-label="Previous video">‹</button>
+    <button class="mnav" id="videoNext" type="button" aria-label="Next video">›</button>
+    <div class="m-head">
+      <b id="modalTitle">Now Playing</b>
+      <button class="close" id="modalClose" aria-label="Close video">×</button>
+    </div>
+    <video id="modalVideo" controls playsinline preload="metadata"></video>
+    <div class="alt-link" id="modalAlt"></div>
+  </div>
+</div>
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+  <button class="lbnav" id="lbPrev" type="button" aria-label="Previous image">‹</button>
+  <button class="lbnav" id="lbNext" type="button" aria-label="Next image">›</button>
+  <img id="lightboxImg" src="" alt="Enlarged photograph">
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- Splash entry ---- */
+  var splash = document.getElementById('splash');
+  var splashFull = document.getElementById('splashFull');
+  var splashSplit = document.getElementById('splashSplit');
+  var splashDone = false;
+  function finishSplash(){
+    if (splashDone) return;
+    splashDone = true;
+    splash.classList.add('hide');
+    document.body.style.overflow = '';
+    setTimeout(function(){ splash.style.display = 'none'; }, 560);
+    var heroEl = document.querySelector('.hero-content');
+    if (heroEl && !heroEl.classList.contains('in')){
+      setTimeout(function(){ heroEl.classList.add('in'); }, 480);
+    }
+  }
+  if (splash){
+    splash.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ splash.classList.add('show'); });
+    });
+    var isWide = window.innerWidth > 1024;
+    if (isWide && splashFull && splashSplit){
+      splashFull.classList.add('on');
+      setTimeout(function(){
+        splashFull.style.transition = 'none';
+        splashFull.style.display = 'none';
+        splashSplit.setAttribute('aria-hidden', 'false');
+        splashSplit.classList.add('on');
+      }, 950);
+    } else if (splashFull){
+      splashFull.classList.add('on');
+    }
+    ['enterSite','enterSiteM'].forEach(function(id){
+      var b = document.getElementById(id);
+      if (b) b.addEventListener('click', finishSplash);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' && !splashDone) finishSplash();
+    });
+  }
+
+  /* ---- Scroll reveal: fade up + stagger ---- */
+  if ('IntersectionObserver' in window){
+    var heroEl = document.querySelector('.hero-content');
+    if (heroEl) heroEl.classList.add('reveal'); /* Hero 由进入动作触发，见 finishSplash */
+    document.querySelectorAll('.photo-strip figure, .photo-row figure').forEach(function(el, i){
+      el.classList.add('reveal');
+      el.style.transitionDelay = ((i % 6) * 100) + 'ms';
+    });
+    document.querySelectorAll('.sec-head, .track, .gcard, .exp-card, .vcard, .nav-inner, .foot-inner').forEach(function(el){
+      el.classList.add('reveal');
+    });
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          en.target.classList.add('in');
+          revealIO.unobserve(en.target);
+        }
+      });
+    }, {threshold: 0.08, rootMargin: '0px 0px -30px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){
+      if (el !== heroEl) revealIO.observe(el); /* Hero 由进入动作触发，不由滚动触发 */
+    });
+  }
+
+  /* ---- Video modal ---- */
+  var modal = document.getElementById('videoModal');
+  var video = document.getElementById('modalVideo');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalAlt = document.getElementById('modalAlt');
+  var videoCards = Array.prototype.slice.call(document.querySelectorAll('.vcard'));
+  var videoList = videoCards.map(function(c){
+    return {
+      src: c.getAttribute('data-video'),
+      title: c.getAttribute('data-title'),
+      poster: c.getAttribute('data-poster'),
+      altSrc: c.getAttribute('data-alt-video'),
+      altLabel: c.getAttribute('data-alt-label')
+    };
+  });
+  var videoIndex = 0;
+
+  function renderVideoItem(item){
+    video.src = item.src;
+    if (item.poster) video.poster = item.poster;
+    modalTitle.textContent = item.title;
+    modalAlt.innerHTML = '';
+    if (item.altSrc && item.altLabel){
+      var a = document.createElement('a');
+      a.href = item.altSrc;
+      a.textContent = item.altLabel;
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener');
+      modalAlt.appendChild(document.createTextNode('Prefer the longer cut? '));
+      modalAlt.appendChild(a);
+    }
+  }
+  function openVideoAt(idx){
+    if (!videoList.length) return;
+    videoIndex = (idx + videoList.length) % videoList.length;
+    renderVideoItem(videoList[videoIndex]);
+    modal.classList.add('open');
+    video.play().catch(function(){});
+  }
+  function openVideo(src, title, poster, altSrc, altLabel){
+    var found = -1;
+    for (var i = 0; i < videoList.length; i++){
+      if (videoList[i].src === src){ found = i; break; }
+    }
+    if (found >= 0){ openVideoAt(found); return; }
+    videoList.push({src: src, title: title, poster: poster, altSrc: altSrc, altLabel: altLabel});
+    openVideoAt(videoList.length - 1);
+  }
+  function closeVideo(){
+    modal.classList.remove('open');
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+  }
+
+  document.getElementById('videoPrev').addEventListener('click', function(){ openVideoAt(videoIndex - 1); });
+  document.getElementById('videoNext').addEventListener('click', function(){ openVideoAt(videoIndex + 1); });
+
+  var cards = document.querySelectorAll('.vcard');
+  Array.prototype.forEach.call(cards, function(card){
+    card.addEventListener('click', function(e){
+      var zoomBtn = e.target.closest('.zoom');
+      if (zoomBtn){
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(zoomBtn.getAttribute('data-full'));
+        return;
+      }
+      var altLink = e.target.closest('[data-alt-link]');
+      if (altLink){
+        e.preventDefault();
+        e.stopPropagation();
+        openVideo(card.getAttribute('data-alt-video'), card.getAttribute('data-title') + ' — Full Set', card.getAttribute('data-poster'));
+        return;
+      }
+      openVideo(
+        card.getAttribute('data-video'),
+        card.getAttribute('data-title'),
+        card.getAttribute('data-poster'),
+        card.getAttribute('data-alt-video'),
+        card.getAttribute('data-alt-label')
+      );
+    });
+  });
+  document.getElementById('modalClose').addEventListener('click', closeVideo);
+  modal.addEventListener('click', function(e){ if (e.target === modal) closeVideo(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeVideo(); closeLightbox(); }
+    if (e.key === 'ArrowLeft'){
+      if (lightbox.classList.contains('open')) openLightboxAt(photoIndex - 1);
+      if (modal.classList.contains('open')) openVideoAt(videoIndex - 1);
+    }
+    if (e.key === 'ArrowRight'){
+      if (lightbox.classList.contains('open')) openLightboxAt(photoIndex + 1);
+      if (modal.classList.contains('open')) openVideoAt(videoIndex + 1);
+    }
+  });
+
+  /* ---- Lightbox (every image opens full-size, swipe left/right) ---- */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var photoList = [];
+  var photoSeen = {};
+  var photoIndex = 0;
+  function registerPhoto(src){
+    if (!src || photoSeen[src]) return;
+    photoSeen[src] = true;
+    photoList.push(src);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-full]'), function(el){
+    registerPhoto(el.getAttribute('data-full'));
+  });
+  function openLightboxAt(idx){
+    if (!photoList.length) return;
+    photoIndex = (idx + photoList.length) % photoList.length;
+    lightboxImg.src = photoList[photoIndex];
+    lightbox.classList.add('open');
+  }
+  function openLightbox(src){
+    if (!src) return;
+    var found = -1;
+    for (var i = 0; i < photoList.length; i++){
+      if (photoList[i] === src){ found = i; break; }
+    }
+    if (found >= 0){ openLightboxAt(found); return; }
+    registerPhoto(src);
+    openLightboxAt(photoList.length - 1);
+  }
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.removeAttribute('src'); }
+
+  document.getElementById('lbPrev').addEventListener('click', function(){ openLightboxAt(photoIndex - 1); });
+  document.getElementById('lbNext').addEventListener('click', function(){ openLightboxAt(photoIndex + 1); });
+
+  document.addEventListener('click', function(e){
+    var zoomBtn = e.target.closest('.zoom');
+    if (zoomBtn){
+      openLightbox(zoomBtn.getAttribute('data-full'));
+      return;
+    }
+    var fig = e.target.closest('figure');
+    if (fig){
+      var fimg = fig.querySelector('img[data-full]');
+      if (fimg){
+        openLightbox(fimg.getAttribute('data-full'));
+        return;
+      }
+    }
+    var t = e.target;
+    if (t && t.tagName === 'IMG'){
+      var full = t.getAttribute('data-full');
+      if (full) openLightbox(full);
+    }
+  });
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
+  var lightboxClose = document.getElementById('lightboxClose');
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+
+  /* ---- Published coverage: single entry button ---- */
+  var pubToggle = document.getElementById('pubToggle');
+  var pubList = document.getElementById('pubList');
+  if (pubToggle && pubList){
+    pubToggle.addEventListener('click', function(){
+      var willOpen = pubList.hidden;
+      pubList.hidden = !willOpen;
+      pubToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      var label = pubToggle.querySelector('.pub-toggle-label');
+      if (label) label.textContent = willOpen ? 'Hide the stories' : 'View the 3 stories';
+    });
+  }
+})();
+</script>
+</body>
+</html>
