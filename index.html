@@ -114,27 +114,27 @@
   section.block{padding:96px 0 20px;position:relative;scroll-margin-top:60px;}
   /* 区域间全宽分割线：横贯整个板块 + 居中菱形 */
   section.block::before{
-    content:"";position:absolute;top:48px;left:0;right:0;height:1px;
+    content:"";position:absolute;top:68px;left:0;right:0;height:1px;
     background:linear-gradient(90deg, transparent 2%, rgba(26,27,28,.12) 10%, rgba(26,27,28,.2) 50%, rgba(26,27,28,.12) 90%, transparent 98%);
   }
   section.block::after{
-    content:"";position:absolute;top:42px;left:50%;width:11px;height:11px;
+    content:"";position:absolute;top:62px;left:50%;width:11px;height:11px;
     background:var(--accent);transform:translateX(-50%) rotate(45deg);
     box-shadow:0 0 0 6px var(--bg);
   }
   .sec-head{position:relative;margin-bottom:40px;max-width:760px;}
   /* 章节编号：悬在分割线上方居中 */
   section.block .no{
-    position:absolute;top:8px;left:50%;transform:translateX(-50%);
-    display:flex;align-items:baseline;gap:12px;white-space:nowrap;
+    position:absolute;top:2px;left:50%;transform:translateX(-50%);
+    display:flex;align-items:baseline;gap:14px;white-space:nowrap;
     z-index:1;
   }
   section.block .no b{
-    font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1;font-weight:600;
-    color:rgba(224,129,60,.45);letter-spacing:0.02em;
+    font-family:Georgia,"Times New Roman",serif;font-size:42px;line-height:1;font-weight:600;
+    color:rgba(224,129,60,.62);letter-spacing:0.02em;
   }
   section.block .no span{
-    font-family:var(--font-display);font-size:13px;letter-spacing:0.3em;
+    font-family:var(--font-display);font-size:16px;letter-spacing:0.3em;
     color:var(--accent);text-transform:uppercase;
   }
   .sec-head h2{
@@ -288,15 +288,29 @@
     text-transform:uppercase;letter-spacing:0.04em;margin:14px 0 6px;}
   .exp-card .role-line{color:var(--accent);font-size:14px;font-weight:500;margin-bottom:12px;}
   .exp-card p{color:var(--muted);font-size:14.5px;max-width:680px;}
-  .exp-card .exp-side{flex:0 1 250px;display:flex;flex-direction:column;gap:12px;}
+  .exp-card .exp-side{flex:0 1 300px;display:flex;flex-direction:column;gap:12px;}
   .exp-side .stat{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:rgba(43,38,29,0.025);}
   .exp-side .stat b{display:block;font-family:var(--font-display);font-size:15px;letter-spacing:0.05em;}
   .exp-side .stat span{font-size:12px;color:var(--muted);}
   .exp-side .stat a.paper-link{color:var(--accent);text-decoration:none;font-family:var(--font-display);}
   .exp-side .stat a.paper-link:hover{text-decoration:underline;}
   .exp-side .btn{width:100%;}
+  /* 论文预览图 */
+  .paper-side .paper-thumb{position:relative;display:block;border-radius:12px;overflow:hidden;
+    border:1px solid rgba(201,106,27,0.32);box-shadow:0 12px 30px rgba(43,38,29,0.16);line-height:0;}
+  .paper-thumb img{width:100%;height:auto;display:block;}
+  .paper-thumb .thumb-hint{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;line-height:1.35;
+    background:rgba(43,38,29,0.78);color:#F7F4ED;font-size:12px;letter-spacing:0.04em;}
+  .paper-thumb:hover{border-color:var(--accent);}
   .exp-card .tags{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0;}
   .exp-card .tags span{font-size:12px;color:var(--text);background:var(--accent-dim);border:1px solid rgba(201,106,27,0.25);padding:3px 9px;border-radius:999px;}
+  /* 论文突出：暖色块背景 */
+  .exp-card.paper-em{
+    background:linear-gradient(135deg, rgba(201,106,27,0.14) 0%, rgba(201,106,27,0.07) 55%, rgba(201,106,27,0.04) 100%);
+    border:1px solid rgba(201,106,27,0.38);
+    box-shadow:0 12px 34px rgba(201,106,27,0.14);
+  }
+  .exp-card.paper-em .stat{background:rgba(247,244,237,0.75);}
 
   /* ===== Footer ===== */
 
@@ -421,6 +435,31 @@
     .reveal{transform:none;} /* 系统要求减弱时仍保留淡入，只是去掉位移 */
   }
   .build-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;}
+
+  /* ===== Footer ===== */
+  footer.site-foot{background:#2B2519;color:rgba(247,244,237,0.82);padding:96px 0 0;}
+  .site-foot .wrap{display:grid;grid-template-columns:2fr 1.1fr 1.5fr;gap:56px;}
+  .site-foot h4{font-family:var(--font-display);font-size:13px;letter-spacing:0.26em;text-transform:uppercase;color:#E5B584;margin-bottom:18px;}
+  .site-foot .about b{font-family:var(--font-display);font-size:19px;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;}
+  .site-foot .about b em{color:#E5B584;font-style:normal;}
+  .site-foot .about p{font-size:14px;line-height:1.9;color:rgba(247,244,237,0.8);margin-top:16px;max-width:440px;}
+  .site-foot .explore{list-style:none;display:grid;grid-template-columns:1fr;gap:12px;justify-content:start;}
+  .site-foot .explore a{color:rgba(247,244,237,0.82);text-decoration:none;font-size:14px;}
+  .site-foot .explore a:hover{color:#FFFFFF;}
+  .site-foot .touch p{display:flex;align-items:center;gap:11px;font-size:14px;margin-bottom:13px;}
+  .site-foot .touch .ico{flex:none;width:17px;height:17px;color:#E5B584;}
+  .site-foot .touch a{color:rgba(247,244,237,0.9);text-decoration:none;}
+  .site-foot .touch a:hover{color:#FFFFFF;}
+  .site-foot .foot-note{border-top:1px solid rgba(247,244,237,0.14);margin-top:40px;padding:20px 0 28px;font-size:12.5px;color:rgba(247,244,237,0.5);}
+  .site-foot .foot-strap{border-top:1px solid rgba(247,244,237,0.14);margin-top:64px;padding:34px 0 48px;text-align:center;}
+  .site-foot .foot-strap div{font-size:14px;letter-spacing:0.06em;color:rgba(247,244,237,0.78);}
+  .site-foot .foot-strap div:last-child{margin-top:10px;font-size:13px;letter-spacing:0.04em;color:rgba(247,244,237,0.48);}
+  @media (max-width:760px){
+    .site-foot .wrap{grid-template-columns:1fr;gap:34px;}
+    section.block .no{top:0;}
+    section.block .no b{font-size:34px;}
+    section.block .no span{font-size:14px;}
+  }
 </style>
 </head>
 <body>
@@ -474,8 +513,8 @@
       <li><a href="#stage">On Stage</a></li>
       <li><a href="#lens">Lens</a></li>
       <li><a href="#games">Games</a></li>
-      <li><a href="#energo">EnerGo</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#energo">EnerGo</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#build">Beyond</a></li>
     </ul>
@@ -642,6 +681,14 @@
             <img src="assets/dusk_skyline.jpg" alt="City skyline at dusk" data-full="assets/dusk_skyline.jpg">
             <figcaption>Dusk Skyline</figcaption>
           </figure>
+          <figure class="lightbox-img" data-src="assets/sunset_lot.jpg">
+            <img src="assets/sunset_lot.jpg" alt="Sunset over a parking lot" data-full="assets/sunset_lot.jpg">
+            <figcaption>Sunset — Parking Lot</figcaption>
+          </figure>
+          <figure class="lightbox-img" data-src="assets/coast_dusk.jpg">
+            <img src="assets/coast_dusk.jpg" alt="Coast at dusk" data-full="assets/coast_dusk.jpg">
+            <figcaption>Coast at Dusk</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -775,9 +822,44 @@
   </div>
 </section>
 
+<!-- ===== Research ===== -->
+<section class="block" id="research">
+  <div class="no"><b>04</b><span>Research</span></div>
+  <div class="wrap">
+    <div class="sec-head">
+      
+      <h2>Academic Paper</h2>
+      <p>Beyond the stage and the camera — a full research paper on how an animation studio builds lasting advantage through digital transformation.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="exp-card paper-em">
+      <div class="exp-main">
+        <span class="chip">IB Research · Business &amp; Technology</span>
+        <h3 style="text-transform:none;letter-spacing:0.01em;">The Innovation Strategy and Sustainable Competitive Advantage in Toei Animation's 3DCG Transformation</h3>
+        <div class="role-line">A case study of Toei Animation's hybrid 2D/3D production pipeline</div>
+        <p><b>Guiding question:</b> how does Toei Animation's 3DCG transformation strategy facilitate building sustainable competitive advantage — and what most inhibits that facilitation?</p>
+        <p>Using a dynamic-capabilities lens, the paper traces Toei's move from hand-drawn 2D toward a 3D-assisted pipeline — 3DLO background tools, in-house Unreal Engine layout instruments, reusable style assets — and evaluates the strategy through SWOT, STEEPLE and Ansoff Matrix analysis. It argues that sustainable advantage depends not on the technology itself, but on dual artistic–technical leadership, reusable asset libraries, and capability-linked governance across a global production network.</p>
+        <div class="tags">
+          <span>Toei Animation</span>
+          <span>3DCG Transformation</span>
+          <span>Innovation Strategy</span>
+          <span>Dynamic Capabilities</span>
+          <span>Sustainable Competitive Advantage</span>
+        </div>
+      </div>
+      <div class="exp-side paper-side">
+        <a class="paper-thumb" href="assets/toei-animation-3dcg-paper.pdf" target="_blank" rel="noopener" aria-label="Open the full paper PDF">
+          <img src="assets/paper_preview.jpg" alt="First page preview — The Innovation Strategy and Sustainable Competitive Advantage in Toei Animation's 3DCG Transformation">
+          <span class="thumb-hint">Tap to read the full paper</span>
+        </a>
+        <a class="btn btn-primary" href="assets/toei-animation-3dcg-paper.pdf" target="_blank" rel="noopener">Full paper ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ===== EnerGo ===== -->
 <section class="block" id="energo">
-  <div class="no"><b>04</b><span>Experience</span></div>
+  <div class="no"><b>05</b><span>Experience</span></div>
   <div class="wrap">
     <div class="sec-head">
       
@@ -804,42 +886,6 @@
           Visit EnerGo website
           <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Research ===== -->
-<section class="block" id="research">
-  <div class="no"><b>05</b><span>Research</span></div>
-  <div class="wrap">
-    <div class="sec-head">
-      
-      <h2>Academic Paper</h2>
-      <p>Beyond the stage and the camera — a full research paper on how an animation studio builds lasting advantage through digital transformation.</p>
-      <div class="rule"></div>
-    </div>
-    <div class="exp-card">
-      <div class="exp-main">
-        <span class="chip">IB Research · Business &amp; Technology</span>
-        <h3 style="text-transform:none;letter-spacing:0.01em;">The Innovation Strategy and Sustainable Competitive Advantage in Toei Animation's 3DCG Transformation</h3>
-        <div class="role-line">A case study of Toei Animation's hybrid 2D/3D production pipeline</div>
-        <p><b>Guiding question:</b> how does Toei Animation's 3DCG transformation strategy facilitate building sustainable competitive advantage — and what most inhibits that facilitation?</p>
-        <p>Using a dynamic-capabilities lens, the paper traces Toei's move from hand-drawn 2D toward a 3D-assisted pipeline — 3DLO background tools, in-house Unreal Engine layout instruments, reusable style assets — and evaluates the strategy through SWOT, STEEPLE and Ansoff Matrix analysis. It argues that sustainable advantage depends not on the technology itself, but on dual artistic–technical leadership, reusable asset libraries, and capability-linked governance across a global production network.</p>
-        <div class="tags">
-          <span>Toei Animation</span>
-          <span>3DCG Transformation</span>
-          <span>Innovation Strategy</span>
-          <span>Dynamic Capabilities</span>
-          <span>Sustainable Competitive Advantage</span>
-        </div>
-      </div>
-      <div class="exp-side">
-        <div class="stat">
-          <b>Toei Animation</b>
-          <span>3DCG transformation · hybrid production</span>
-        </div>
-        <a class="btn btn-primary" href="assets/toei-animation-3dcg-paper.pdf" target="_blank" rel="noopener">Full paper ↗</a>
       </div>
     </div>
   </div>
@@ -944,13 +990,6 @@
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-inner">
-    <div>Yicheng (Eason) Fan · Bassist · Photographer · Game Designer</div>
-    <div>Built for the things I make outside class.</div>
-  </div>
-</footer>
-
 <!-- ===== Video modal ===== -->
 <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
   <div class="box">
@@ -972,6 +1011,48 @@
   <button class="lbnav" id="lbNext" type="button" aria-label="Next image">›</button>
   <img id="lightboxImg" src="" alt="Enlarged photograph">
 </div>
+
+<!-- ===== Footer ===== -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="about">
+      <h4>About</h4>
+      <b>Yicheng<em>.</em>Fan</b>
+      <p>IB student at Qibao Dwight High School, Shanghai. Musician, photographer, game designer, and builder. This page is a glimpse into the parts of my life that don't show up on a transcript — but shape who I am.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <ul class="explore">
+        <li><a href="#stage">On Stage</a></li>
+        <li><a href="#lens">Lens</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#energo">EnerGo</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#build">Beyond</a></li>
+      </ul>
+    </div>
+    <div class="touch">
+      <h4>Get in Touch</h4>
+      <p>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <a href="mailto:ycfan_eason@qibaodwight.org">ycfan_eason@qibaodwight.org</a>
+      </p>
+      <p>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Shanghai, China
+      </p>
+      <p>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5"/></svg>
+        Qibao Dwight High School, Class of 2027
+      </p>
+    </div>
+  </div>
+  <div class="foot-strap">
+    <div>Yicheng (Eason) Fan · Bassist · Photographer · Game Designer</div>
+    <div>Built for the things I make outside class.</div>
+  </div>
+</footer>
 
 <script>
 (function(){
